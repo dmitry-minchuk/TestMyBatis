@@ -1,0 +1,19 @@
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="DAO.Interface.IUser">
+    <resultMap id = "user" type="Model.User">
+        <id property="id" column="id"/>
+        <result property="name" column="name"/>
+        <association property="tariff" column="tariff"
+                        javaType="Model.Tariff"
+                        select="DAO.Interface.ITariff.getTariffById"
+                        fetchType="eager"/>
+
+        <collection property="car" column="id"
+                    javaType="List" ofType="Model.Car"
+                    select="DAO.Interface.ICar.getCarByUser"
+                    fetchType="eager"/>
+    </resultMap>
+    <select id="getUserById" resultMap="user" parameterType="java.lang.Integer">
+        SELECT * FROM carwashservice.users where id = #{id}
+    </select>
+</mapper>
