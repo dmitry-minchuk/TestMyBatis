@@ -16,9 +16,11 @@
                     fetchType="eager"/>
 
     </resultMap>
+    <!--
     <select id="getUserById" resultMap="user" parameterType="java.lang.Integer">
         SELECT * FROM carwashservice.users where id = #{id}
     </select>
+    -->
     <!--
     <insert id="insertUsers" parameterType="Model.User">
         INSERT INTO carwashservice.users (id, name, tariff)

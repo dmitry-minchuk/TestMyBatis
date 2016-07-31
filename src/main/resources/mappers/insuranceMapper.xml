@@ -5,9 +5,11 @@
         <result property="cost" column="cost"/>
         <result property="exp_date" column="exp_date"/>
     </resultMap>
+    <!--
     <select id="getInsuranceById" resultMap="insurance" parameterType="java.lang.Integer">
         SELECT * FROM carwashservice.insurance WHERE id = #{id}
     </select>
+    -->
     <!--
     <insert id="insertInsurance" parameterType="Model.Insurance">
         INSERT INTO carwashservice.insurance (id, cost, exp_date)
