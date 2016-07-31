@@ -7,4 +7,10 @@
     <select id="getTariffById" resultMap="tariff" parameterType="java.lang.Integer">
         SELECT * FROM carwashservice.tariffs where id = #{id}
     </select>
+    <!--
+    <insert id="insertTariff" parameterType="Model.Tariff">
+        INSERT INTO carwashservice.tariffs (id, description)
+        VALUES (#{id}, #{description})
+    </insert>
+    -->
 </mapper>

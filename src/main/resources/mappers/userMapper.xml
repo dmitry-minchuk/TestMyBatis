@@ -3,6 +3,8 @@
     <resultMap id = "user" type="Model.User">
         <id property="id" column="id"/>
         <result property="name" column="name"/>
+        <!--<result property="tariff_id" column="tariff"/>-->
+
         <association property="tariff" column="tariff"
                         javaType="Model.Tariff"
                         select="DAO.Interface.ITariff.getTariffById"
@@ -12,8 +14,15 @@
                     javaType="List" ofType="Model.Car"
                     select="DAO.Interface.ICar.getCarByUser"
                     fetchType="eager"/>
+
     </resultMap>
     <select id="getUserById" resultMap="user" parameterType="java.lang.Integer">
         SELECT * FROM carwashservice.users where id = #{id}
     </select>
+    <!--
+    <insert id="insertUsers" parameterType="Model.User">
+        INSERT INTO carwashservice.users (id, name, tariff)
+        VALUES (#{id}, #{name}, #{tariff})
+    </insert>
+    -->
 </mapper>

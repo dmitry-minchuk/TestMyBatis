@@ -3,12 +3,21 @@
     <resultMap id = "car" type="Model.Car">
         <id property="id" column="id"/>
         <result property="model" column="model"/>
+        <!--<result property="user_id" column="user"/>-->
+        <!--<result property="insurance_id" column="insurance"/>-->
         <association property="insurance" column="insurance"
                      javaType="Model.Insurance"
                      select="DAO.Interface.IInsurance.getInsuranceById"
                      fetchType="eager"/>
+
     </resultMap>
     <select id="getCarByUser" resultMap="car" parameterType="java.lang.Integer">
         SELECT * FROM carwashservice.cars where user = #{id}
     </select>
+    <!--
+    <insert id="insertCars" parameterType="Model.Car">
+        INSERT INTO carwashservice.cars (id, model, user, insurance)
+        VALUES (#{id}, #{model}, #{user}, #{insurance})
+    </insert>
+    -->
 </mapper>

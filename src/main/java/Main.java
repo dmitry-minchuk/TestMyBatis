@@ -1,9 +1,10 @@
-import DAO.MyBatis.UserDao;
+import DAO.MyBatis.UserDAO;
 import Model.User;
 
 public class Main {
     public static void main(String[] args) {
-        UserDao userDao = new UserDao();
+        //InitDB.init();
+        UserDAO userDao = new UserDAO();
         int userId = 1;
 
         User user = userDao.getUserById(userId);

@@ -8,4 +8,10 @@
     <select id="getInsuranceById" resultMap="insurance" parameterType="java.lang.Integer">
         SELECT * FROM carwashservice.insurance WHERE id = #{id}
     </select>
+    <!--
+    <insert id="insertInsurance" parameterType="Model.Insurance">
+        INSERT INTO carwashservice.insurance (id, cost, exp_date)
+        VALUES (#{id}, #{cost}, #{exp_date})
+    </insert>
+    -->
 </mapper>

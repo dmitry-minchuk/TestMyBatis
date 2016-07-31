@@ -22,6 +22,6 @@ public class Tariff {
 
     @Override
     public String toString(){
-        return "User Car wash tariff is: " + description;
+        return "User Carwash tariff is: " + description;
     }
 }
